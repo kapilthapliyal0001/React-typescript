@@ -4,6 +4,8 @@ import "./App.css";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import homePage from "./components/homePage";
 import Book from "./types/book";
+import FormComponent from "./components/FormComponent";
+import FunctionalComponent from "./components/FunctionalComponent";
 
 function App() {
   const [books, setBooks] = useState<Book[]>([]);
@@ -30,10 +32,17 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Route path="/" component={homePage} />
-          {/* <Route 
-          path="/form"
-          render={(routerProps) => <FormComponent {...routerProps} user="Stefano" books={books} />} 
+          <Route
+            path="/form"
+            render={(routerProps) => (
+              <FormComponent {...routerProps} user="Stefano" books={books} />
+            )}
+          />
+          {/* <FunctionalComponent
+            title="Strive Schook"
+            subTitle="Another String"
           /> */}
+          {/* <Route path="/check" render={(routerProps) => <FormComponent {...routerProps} user="Stefano" books={books}/> */}
         </header>
       </div>
     </Router>
